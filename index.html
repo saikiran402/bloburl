@@ -1,0 +1,25 @@
+<html>
+    <!-- <head>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22app.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="&lt;script&gt;" title="&lt;script&gt;" />
+    </head>
+ -->    <body onload="onload()">
+        <img id="image">
+    </body>
+</html>
+<script type="text/javascript">
+	function onload() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "1.jpeg");
+    xhr.responseType = "arraybuffer";
+ 
+    xhr.onload = function(error) {
+    	console.log(xhr.response);
+        var blob = new Blob([xhr.response]);
+           console.log(blob);
+        var blobUrl = URL.createObjectURL(blob);
+        console.log(blobUrl);
+        document.getElementById("image").src = blobUrl;
+    }
+    xhr.send();
+}
+</script>
